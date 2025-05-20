@@ -1,0 +1,393 @@
+:root {
+    --pri: #fff;
+    --sec: #222831;
+    --tri1: #02d4df;
+    --tri2: #486d77;
+    --red:red;
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 200;
+    src: url(./AeonikTRIAL-Light.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 500;
+    src: url(./AeonikTRIAL-Regular.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 700;
+    src: url(./AeonikTRIAL-Bold.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: aeonik;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+}
+
+h2 {
+    color: var(--pri);
+    font-family: aeonik;
+    font-weight: 500;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: var(--tri2);
+}
+
+section.allElem {
+    height: 100%;
+    width: 100%;
+    padding: 35px;
+    padding-top: 80px;
+    background-color: var(--sec);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px;
+    position: absolute;
+}
+
+.elem {
+    background-color: var(--tri1);
+    /* padding: 20px 30px; */
+    border-radius: 15px;
+    font-size: 30px;
+    color: var(--pri);
+    height: 250px;
+    width: 210px;
+    overflow: hidden;
+    position: relative;
+    transition: all ease 0.4s;
+    cursor: pointer;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.elem h2 {
+    position: absolute;
+    font-weight: 500;
+    bottom: 5%;
+    right: 5%;
+    left: 5%;
+    font-size: 1.2rem;
+}
+
+.elem:active {
+    scale: 0.96;
+}
+
+.fullElem {
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+    padding: 35px;
+    display: none;
+    position: absolute;
+}
+
+.back {
+    background-color: var(--red);
+    font-weight: 500;
+    font-size: 20px;
+    padding: 8px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 13px;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    cursor: pointer;
+}
+
+.back:active {
+    scale: 0.97;
+}
+
+
+
+.todo-list h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.todo-list .todo-container {
+    height: 80%;
+    width: 100%;
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-list .todo-container .addTask {
+    background-color: var(--tri2);
+    width: 35%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.todo-list .todo-container .addTask form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+.todo-container .addTask form input#taskInput {
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 20px;
+    background-color: var(--sec);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: var(--pri);
+    margin-bottom: 20px;
+}
+
+
+.todo-container .addTask form textarea {
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 20px;
+    background-color: var(--sec);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: var(--pri);
+    margin-bottom: 20px;
+}
+
+
+.todo-container .addTask form button {
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: var(--tri1);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: var(--sec);
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.todo-container .addTask form button:active {
+    scale: 0.97;
+}
+
+.todo-list .todo-container .allTask {
+    background-color: var(--tri2);
+    width: 62%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    overflow: auto;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--tri1);
+    padding: 6px 15px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.task h5 {
+    color: var(--sec);
+    font-size: 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+.task h5 span{
+    color: var(--pri);
+    font-size: 8px;
+    background-color: var(--red);
+    padding: 2px 6px;
+    border:none;
+    border-radius: 10px;
+}
+.task h5 span.true{
+    opacity: 1;
+}
+.task h5 span.false{
+    opacity: 0;
+}
+
+.task button {
+    padding: 10px 10px;
+    color: var(--pri);
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.mark-imp{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-bottom: 20px;
+    gap: 20px;
+    color: var(--pri);
+}
+.mark-imp input{
+    scale: 1.3;
+}
+.mark-imp label{
+    font-size: 16px;
+}
+
+
+.daily-planner h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.daily-planner .day-planner{
+    background: var(--tri2);
+    border-radius: 8px;
+    width: 100%;
+    height: 85%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.daily-planner .day-planner .day-planner-time{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 49%;
+    margin-bottom: 10px;
+}
+
+.daily-planner .day-planner .day-planner-time p{
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    color: var(--tri1);
+    font-size: 13px;
+}
+
+.daily-planner .day-planner .day-planner-time input{
+    width: 100%;
+    font-size: 22px;
+    padding: 22px 25px;
+    background-color: var(--sec);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+
+.motivational h2{
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.motivaional-container{
+    height: 300px;
+    width: 400px;
+    /* background-color: var(--red); */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50px;
+    transform: translate(-50%,-50%);
+}
+
+.motivaional-container::after{
+    content: ' ';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgb(254, 189, 24);
+    border-radius: 50px;
+    scale: 1.2;
+    z-index: 8;
+    filter: blur(50px);
+}
+
+.motivaional-container .motivation-wrapper{
+    z-index: 10;
+    background-color: var(--sec);
+    position: absolute;
+    width:100% ;
+    border-radius: 40px;
+    padding: 20px;
+}
+
+.motivation-1{
+    background-color: var(--tri2);
+    color: var(--pri);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.motivation-1 h3{
+    font-size: 30px;
+    font-weight: 500;
+}
+.motivation-2{
+    padding: 10px;
+}
+.motivation-2 h1{
+    color: var(--pri);
+    font-size: 18px;
+    font-weight: 500;
+}
+.motivation-3{
+    text-align: end;
+}
+
+.motivation-3 h3{
+    color: var(--pri);
+    font-size: 15px;
+    margin-top: 50px;
+}
