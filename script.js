@@ -84,9 +84,7 @@ function ToDoList() {
 ToDoList();
 
 //! Daily Planner...
-
-function DailyPlanner()
-{
+function DailyPlanner() {
     var dailyPlanner = document.querySelector(".day-planner");
 
     var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData')) || {}
@@ -124,9 +122,7 @@ DailyPlanner();
 
 
 //! Motivational Quote...
-
-function Motivational()
-{
+function Motivational() {
     var motivationQuote = document.querySelector(".motivation-2 h1");
     var motivationAuthor = document.querySelector(".motivation-3 h3");
     // window.location.reload();
@@ -145,3 +141,70 @@ function Motivational()
 }
 Motivational()
 
+
+//! Pomodoro Timer....
+function Pomodoro()
+{
+    var startBtn = document.querySelector(".start");
+    var pauseBtn = document.querySelector(".pause");
+    var resetBtn = document.querySelector(".reset");
+    var time = document.querySelector(".time-main");
+
+    var reach = true;
+    var totalTime = 25 * 60;
+    timerInterval = null;
+
+    function updateTimer() {
+        var min = Math.floor(totalTime / 60);
+        var sec = totalTime % 60;
+        time.innerHTML = `${String(min).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+    }
+
+    function start() {
+        clearInterval(timerInterval)
+        if (reach) {
+            totalTime = 25 * 60;
+            timerInterval = setInterval(() => {
+                if (totalTime > 0) {
+                    totalTime--;
+                    updateTimer();
+                }
+                else {
+                    reach = false;
+                    clearInterval(timerInterval);
+                    time.innerHTML = `05:00`
+                }
+            }, 10);
+        }
+        else {
+            totalTime = 5 * 60;
+            timerInterval = setInterval(() => {
+                if (totalTime > 0) {
+                    totalTime--;
+                    updateTimer();
+                }
+                else {
+                    reach = true;
+                    clearInterval(timerInterval);
+                    time.innerHTML = `25:00`
+                }
+            }, 10);
+        }
+    }
+
+    startBtn.addEventListener("click", start);
+
+    function stop() {
+        clearInterval(timerInterval)
+    }
+    pauseBtn.addEventListener("click", stop);
+
+    function reset() {
+        clearInterval(timerInterval);
+        totalTime = 25 * 60;
+        updateTimer();
+    }
+
+    resetBtn.addEventListener("click", reset);
+}
+Pomodoro();

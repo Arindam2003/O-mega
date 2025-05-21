@@ -3,7 +3,7 @@
     --sec: #222831;
     --tri1: #02d4df;
     --tri2: #486d77;
-    --red:red;
+    --red: red;
 }
 
 @font-face {
@@ -49,24 +49,39 @@ h2 {
     font-weight: 500;
 }
 
-nav {
+/* nav {
     position: fixed;
     width: 100%;
     height: 60px;
     background-color: var(--tri2);
+} */
+
+.allElem header{
+    height: 200px;
+    width: 100%;
+    background-color: var(--tri2);
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+header h1{
+    color: var(--pri);
+    padding: 10px;
 }
 
 section.allElem {
     height: 100%;
     width: 100%;
     padding: 35px;
-    padding-top: 80px;
-    background-color: var(--sec);
+    /* padding-top: 80px; */
+    /* background-color: var(--sec); */
+    position: absolute;
+}
+
+.allElem .all-project {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 40px;
-    position: absolute;
 }
 
 .elem {
@@ -237,18 +252,21 @@ section.allElem {
     align-items: flex-start;
     gap: 5px;
 }
-.task h5 span{
+
+.task h5 span {
     color: var(--pri);
     font-size: 8px;
     background-color: var(--red);
     padding: 2px 6px;
-    border:none;
+    border: none;
     border-radius: 10px;
 }
-.task h5 span.true{
+
+.task h5 span.true {
     opacity: 1;
 }
-.task h5 span.false{
+
+.task h5 span.false {
     opacity: 0;
 }
 
@@ -263,7 +281,7 @@ section.allElem {
     font-size: 12px;
 }
 
-.mark-imp{
+.mark-imp {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -272,20 +290,23 @@ section.allElem {
     gap: 20px;
     color: var(--pri);
 }
-.mark-imp input{
+
+.mark-imp input {
     scale: 1.3;
 }
-.mark-imp label{
+
+.mark-imp label {
     font-size: 16px;
 }
 
 
-.daily-planner h2{
+.daily-planner h2 {
     font-size: 40px;
     margin-bottom: 20px;
     font-weight: 600;
 }
-.daily-planner .day-planner{
+
+.daily-planner .day-planner {
     background: var(--tri2);
     border-radius: 8px;
     width: 100%;
@@ -298,7 +319,7 @@ section.allElem {
     overflow: auto;
 }
 
-.daily-planner .day-planner .day-planner-time{
+.daily-planner .day-planner .day-planner-time {
     display: flex;
     align-items: center;
     position: relative;
@@ -306,7 +327,7 @@ section.allElem {
     margin-bottom: 10px;
 }
 
-.daily-planner .day-planner .day-planner-time p{
+.daily-planner .day-planner .day-planner-time p {
     position: absolute;
     top: 5%;
     left: 2%;
@@ -314,7 +335,7 @@ section.allElem {
     font-size: 13px;
 }
 
-.daily-planner .day-planner .day-planner-time input{
+.daily-planner .day-planner .day-planner-time input {
     width: 100%;
     font-size: 22px;
     padding: 22px 25px;
@@ -326,12 +347,12 @@ section.allElem {
 }
 
 
-.motivational h2{
+.motivational h2 {
     font-weight: 600;
     font-size: 40px;
 }
 
-.motivaional-container{
+.motivaional-container {
     height: 300px;
     width: 400px;
     /* background-color: var(--red); */
@@ -339,10 +360,10 @@ section.allElem {
     top: 50%;
     left: 50%;
     border-radius: 50px;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-.motivaional-container::after{
+.motivaional-container::after {
     content: ' ';
     height: 100%;
     width: 100%;
@@ -354,40 +375,84 @@ section.allElem {
     filter: blur(50px);
 }
 
-.motivaional-container .motivation-wrapper{
+.motivaional-container .motivation-wrapper {
     z-index: 10;
     background-color: var(--sec);
     position: absolute;
-    width:100% ;
+    width: 100%;
     border-radius: 40px;
     padding: 20px;
 }
 
-.motivation-1{
+.motivation-1 {
     background-color: var(--tri2);
     color: var(--pri);
     padding: 15px;
     border-radius: 15px;
     margin-bottom: 10px;
 }
-.motivation-1 h3{
+
+.motivation-1 h3 {
     font-size: 30px;
     font-weight: 500;
 }
-.motivation-2{
+
+.motivation-2 {
     padding: 10px;
 }
-.motivation-2 h1{
+
+.motivation-2 h1 {
     color: var(--pri);
     font-size: 18px;
     font-weight: 500;
 }
-.motivation-3{
+
+.motivation-3 {
     text-align: end;
 }
 
-.motivation-3 h3{
+.motivation-3 h3 {
     color: var(--pri);
     font-size: 15px;
     margin-top: 50px;
+}
+
+
+.pomodoro {
+    position: relative;
+}
+
+.pomodoro h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.pomodoro .pomo-timer {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.pomodoro .pomo-timer h1 {
+    color: var(--tri1);
+    font-size: 100px;
+}
+
+.pomodoro .pomo-timer button {
+    margin: 10px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--tri2);
+    color: var(--pri);
+    font-size: 20px;
+    box-shadow: 3px 3px 0px var(--tri1);
+    transition: all ease 0.1s;
+}
+
+.pomodoro .pomo-timer button:active {
+    box-shadow: 0px 0px 0px var(--tri1);
+    scale: 1.1;
 }
