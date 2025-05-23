@@ -208,3 +208,17 @@ function Pomodoro()
     resetBtn.addEventListener("click", reset);
 }
 Pomodoro();
+
+
+var key = '4bf63a7c29b34df3af8182221252305'
+var city='Kolkata'
+async function weatherApiCall()
+{
+    var response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${key}&q=${city}`)
+
+    var data= await response.json();
+    console.log(data);
+    
+}
+
+weatherApiCall();
